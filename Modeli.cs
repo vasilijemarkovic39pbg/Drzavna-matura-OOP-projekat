@@ -37,6 +37,8 @@ namespace Drzavna_matura
 
         public string getUneto()
         { return $"{NazivProfila},{odeljenje},{tipMature},{JezikPolaganja},{PrviPredmet},{DrugiPredmet},{TreciPredmet}"; }
+
+        public override string ToString() { return NazivProfila; }
     }
 
     internal class Modeli
