@@ -30,24 +30,24 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ucenik_tab = new System.Windows.Forms.TabPage();
-            this.profil_tab = new System.Windows.Forms.TabPage();
-            this.profil_box = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ime_prezime_box = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.odeljenje_box = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tip_mature_box = new System.Windows.Forms.ComboBox();
-            this.jezik_box = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.prvi_predmet_box = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.drugi_predmet_box = new System.Windows.Forms.TextBox();
+            this.dodaj_ucenika = new System.Windows.Forms.Button();
             this.treci_predmet_box = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dodaj_ucenika = new System.Windows.Forms.Button();
+            this.drugi_predmet_box = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.prvi_predmet_box = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.jezik_box = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tip_mature_box = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.odeljenje_box = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ime_prezime_box = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.profil_box = new System.Windows.Forms.ComboBox();
+            this.profil_tab = new System.Windows.Forms.TabPage();
             this.sacuvaj_profil = new System.Windows.Forms.Button();
             this.treci_predmet_profil_box = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.odeljenje_profil_box = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.naziv_box = new System.Windows.Forms.TextBox();
+            this.lista_ucenika = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.ucenik_tab.SuspendLayout();
             this.profil_tab.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // ucenik_tab
             // 
+            this.ucenik_tab.Controls.Add(this.lista_ucenika);
             this.ucenik_tab.Controls.Add(this.dodaj_ucenika);
             this.ucenik_tab.Controls.Add(this.treci_predmet_box);
             this.ucenik_tab.Controls.Add(this.label8);
@@ -105,6 +107,153 @@
             this.ucenik_tab.Text = "Ucenik";
             this.ucenik_tab.UseVisualStyleBackColor = true;
             // 
+            // dodaj_ucenika
+            // 
+            this.dodaj_ucenika.Location = new System.Drawing.Point(593, 122);
+            this.dodaj_ucenika.Name = "dodaj_ucenika";
+            this.dodaj_ucenika.Size = new System.Drawing.Size(162, 24);
+            this.dodaj_ucenika.TabIndex = 17;
+            this.dodaj_ucenika.Text = "Dodaj ucenika";
+            this.dodaj_ucenika.UseVisualStyleBackColor = true;
+            this.dodaj_ucenika.Click += new System.EventHandler(this.dodaj_ucenika_Click);
+            // 
+            // treci_predmet_box
+            // 
+            this.treci_predmet_box.FormattingEnabled = true;
+            this.treci_predmet_box.Location = new System.Drawing.Point(397, 123);
+            this.treci_predmet_box.Name = "treci_predmet_box";
+            this.treci_predmet_box.Size = new System.Drawing.Size(162, 21);
+            this.treci_predmet_box.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(394, 106);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Treci predmet";
+            // 
+            // drugi_predmet_box
+            // 
+            this.drugi_predmet_box.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.drugi_predmet_box.Location = new System.Drawing.Point(201, 123);
+            this.drugi_predmet_box.Name = "drugi_predmet_box";
+            this.drugi_predmet_box.ReadOnly = true;
+            this.drugi_predmet_box.Size = new System.Drawing.Size(162, 20);
+            this.drugi_predmet_box.TabIndex = 14;
+            this.drugi_predmet_box.Text = "Matematika";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(198, 106);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Drugi predmet";
+            // 
+            // prvi_predmet_box
+            // 
+            this.prvi_predmet_box.FormattingEnabled = true;
+            this.prvi_predmet_box.Location = new System.Drawing.Point(6, 122);
+            this.prvi_predmet_box.Name = "prvi_predmet_box";
+            this.prvi_predmet_box.Size = new System.Drawing.Size(162, 21);
+            this.prvi_predmet_box.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 106);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Prvi predmet";
+            // 
+            // jezik_box
+            // 
+            this.jezik_box.FormattingEnabled = true;
+            this.jezik_box.Location = new System.Drawing.Point(593, 71);
+            this.jezik_box.Name = "jezik_box";
+            this.jezik_box.Size = new System.Drawing.Size(162, 21);
+            this.jezik_box.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(590, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Jezik";
+            // 
+            // tip_mature_box
+            // 
+            this.tip_mature_box.FormattingEnabled = true;
+            this.tip_mature_box.Location = new System.Drawing.Point(397, 71);
+            this.tip_mature_box.Name = "tip_mature_box";
+            this.tip_mature_box.Size = new System.Drawing.Size(162, 21);
+            this.tip_mature_box.TabIndex = 8;
+            this.tip_mature_box.SelectedIndexChanged += new System.EventHandler(this.tip_mature_box_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(394, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Tip mature";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(198, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Odeljenje";
+            // 
+            // odeljenje_box
+            // 
+            this.odeljenje_box.Location = new System.Drawing.Point(201, 71);
+            this.odeljenje_box.Name = "odeljenje_box";
+            this.odeljenje_box.Size = new System.Drawing.Size(162, 20);
+            this.odeljenje_box.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Ime i prezime";
+            // 
+            // ime_prezime_box
+            // 
+            this.ime_prezime_box.Location = new System.Drawing.Point(6, 71);
+            this.ime_prezime_box.Name = "ime_prezime_box";
+            this.ime_prezime_box.Size = new System.Drawing.Size(162, 20);
+            this.ime_prezime_box.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Profil";
+            // 
+            // profil_box
+            // 
+            this.profil_box.FormattingEnabled = true;
+            this.profil_box.Location = new System.Drawing.Point(6, 19);
+            this.profil_box.Name = "profil_box";
+            this.profil_box.Size = new System.Drawing.Size(162, 21);
+            this.profil_box.TabIndex = 0;
+            // 
             // profil_tab
             // 
             this.profil_tab.Controls.Add(this.sacuvaj_profil);
@@ -129,151 +278,6 @@
             this.profil_tab.TabIndex = 1;
             this.profil_tab.Text = "Profil";
             this.profil_tab.UseVisualStyleBackColor = true;
-            // 
-            // profil_box
-            // 
-            this.profil_box.FormattingEnabled = true;
-            this.profil_box.Location = new System.Drawing.Point(6, 19);
-            this.profil_box.Name = "profil_box";
-            this.profil_box.Size = new System.Drawing.Size(162, 21);
-            this.profil_box.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Profil";
-            // 
-            // ime_prezime_box
-            // 
-            this.ime_prezime_box.Location = new System.Drawing.Point(6, 71);
-            this.ime_prezime_box.Name = "ime_prezime_box";
-            this.ime_prezime_box.Size = new System.Drawing.Size(162, 20);
-            this.ime_prezime_box.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Ime i prezime";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(198, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Odeljenje";
-            // 
-            // odeljenje_box
-            // 
-            this.odeljenje_box.Location = new System.Drawing.Point(201, 71);
-            this.odeljenje_box.Name = "odeljenje_box";
-            this.odeljenje_box.Size = new System.Drawing.Size(162, 20);
-            this.odeljenje_box.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(394, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Tip mature";
-            // 
-            // tip_mature_box
-            // 
-            this.tip_mature_box.FormattingEnabled = true;
-            this.tip_mature_box.Location = new System.Drawing.Point(397, 71);
-            this.tip_mature_box.Name = "tip_mature_box";
-            this.tip_mature_box.Size = new System.Drawing.Size(162, 21);
-            this.tip_mature_box.TabIndex = 8;
-            // 
-            // jezik_box
-            // 
-            this.jezik_box.FormattingEnabled = true;
-            this.jezik_box.Location = new System.Drawing.Point(593, 71);
-            this.jezik_box.Name = "jezik_box";
-            this.jezik_box.Size = new System.Drawing.Size(162, 21);
-            this.jezik_box.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(590, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Jezik";
-            // 
-            // prvi_predmet_box
-            // 
-            this.prvi_predmet_box.FormattingEnabled = true;
-            this.prvi_predmet_box.Location = new System.Drawing.Point(6, 122);
-            this.prvi_predmet_box.Name = "prvi_predmet_box";
-            this.prvi_predmet_box.Size = new System.Drawing.Size(162, 21);
-            this.prvi_predmet_box.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Prvi predmet";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(198, 106);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Drugi predmet";
-            // 
-            // drugi_predmet_box
-            // 
-            this.drugi_predmet_box.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.drugi_predmet_box.Location = new System.Drawing.Point(201, 123);
-            this.drugi_predmet_box.Name = "drugi_predmet_box";
-            this.drugi_predmet_box.ReadOnly = true;
-            this.drugi_predmet_box.Size = new System.Drawing.Size(162, 20);
-            this.drugi_predmet_box.TabIndex = 14;
-            this.drugi_predmet_box.Text = "Matematika";
-            // 
-            // treci_predmet_box
-            // 
-            this.treci_predmet_box.FormattingEnabled = true;
-            this.treci_predmet_box.Location = new System.Drawing.Point(397, 123);
-            this.treci_predmet_box.Name = "treci_predmet_box";
-            this.treci_predmet_box.Size = new System.Drawing.Size(162, 21);
-            this.treci_predmet_box.TabIndex = 16;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(394, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Treci predmet";
-            // 
-            // dodaj_ucenika
-            // 
-            this.dodaj_ucenika.Location = new System.Drawing.Point(593, 122);
-            this.dodaj_ucenika.Name = "dodaj_ucenika";
-            this.dodaj_ucenika.Size = new System.Drawing.Size(162, 24);
-            this.dodaj_ucenika.TabIndex = 17;
-            this.dodaj_ucenika.Text = "Dodaj ucenika";
-            this.dodaj_ucenika.UseVisualStyleBackColor = true;
             // 
             // sacuvaj_profil
             // 
@@ -403,6 +407,14 @@
             this.naziv_box.Size = new System.Drawing.Size(162, 20);
             this.naziv_box.TabIndex = 20;
             // 
+            // lista_ucenika
+            // 
+            this.lista_ucenika.FormattingEnabled = true;
+            this.lista_ucenika.Location = new System.Drawing.Point(6, 155);
+            this.lista_ucenika.Name = "lista_ucenika";
+            this.lista_ucenika.Size = new System.Drawing.Size(749, 238);
+            this.lista_ucenika.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,7 +447,6 @@
         private System.Windows.Forms.ComboBox tip_mature_box;
         private System.Windows.Forms.ComboBox jezik_box;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox drugi_predmet_box;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox prvi_predmet_box;
         private System.Windows.Forms.Label label6;
@@ -457,6 +468,8 @@
         private System.Windows.Forms.TextBox odeljenje_profil_box;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox naziv_box;
+        public System.Windows.Forms.TextBox drugi_predmet_box;
+        private System.Windows.Forms.ListBox lista_ucenika;
     }
 }
 
